@@ -85,7 +85,7 @@ def add_text_layer(pdf, image, height, dpi):
     # our patch to "&" issue
     with open(hocrfile, "r") as f:
         hocr_text = f.read()
-    hocr_text.replace("&", "&amp;")
+    hocr_text = hocr_text.replace("&", "&amp;")
     hocr_text = hocr_text.encode()
     hocr = etree.fromstring(hocr_text, html.XHTMLParser())
     ## end of patch ##
